@@ -4,7 +4,7 @@
   "description": "The weekend challenge for the end of week 7 at Makers Academy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "protractor conf.js"
   },
   "repository": {
     "type": "git",
