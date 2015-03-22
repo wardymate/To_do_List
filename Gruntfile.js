@@ -22,22 +22,31 @@ module.exports = function(grunt){
       },
     },
     protractor_webdriver: {
-    options: {
-      // Task-specific options go here.
+      options: {
+        // Task-specific options go here.
+      },
+      your_target: {
+        command: 'webdriver-manager start',// Target-specific file lists and/or options go here.
+      },
     },
-    your_target: {
-      command: 'webdriver-manager start',// Target-specific file lists and/or options go here.
-    },
-  },
-
-
+    express: {
+      options: {
+        port: 3000,
+        debug: true
+      },
+      server: {
+        options: {
+          script: 'server.js'
+        }
+      }
+    }
   });
 
+  grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-protractor-runner');
 
-
-  grunt.registerTask('default', ['jshint','protractor_webdriver','protractor']);
+  grunt.registerTask('default', ['express','jshint','protractor_webdriver','protractor']);
 
 };
