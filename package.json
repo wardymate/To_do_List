@@ -4,7 +4,7 @@
   "description": "The weekend challenge for the end of week 7 at Makers Academy",
   "main": "index.js",
   "scripts": {
-    "test": "protractor conf.js"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
