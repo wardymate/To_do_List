@@ -1,5 +1,16 @@
 # Todo Challenge ![Travis](https://travis-ci.org/wardymate/todo_challenge.svg?branch=master)
 
+Details of the Challenge Below:
+
+Where I am and things I struggled with. Initial intention was to test with protractor and use karma jasmine for my unit tests. Build the app on an express server. Struggle with automating a slenium server using Grunt. Managed to get Grunt to start a selenium server for my protractor tests. However still struggled with getting grunt-express-server to start my node server automatically. Tried a few other options - grunt-express, grode-nodemon all unsuccessful. So at the moment my build fails although my first protractor test passes when I run it locally with starting the node serverin a separate bash session. Although unseccesfull I feel I have learnt a lot about using Grunt and exploring different packages that are availbale and how to add them.
+
+I decided to proceed with starting my unit tests and this is the stage I am up - ran into a small issue where karma was not finding the todoList variable in the first line of my controller - resolved now.
+
+Will proceed with writing unit tests for my controller/s and build so working version locally that does not store tasks.
+second stage will be to create storage via an api on the node server.
+
+
+
 * Deadline: submit completed pull request by 9am on Monday
 * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
 
