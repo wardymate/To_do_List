@@ -10,3 +10,5 @@ before_script:
   - 'bower install'
   - 'npm install protractor'
   - 'webdriver-manager update'
+  - 'npm install grunt'
+  - 'npm install grunt-cli'
