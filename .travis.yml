@@ -5,4 +5,8 @@ node_js:
   - "0.10"
   - "0.8"
   - "0.6"
-
+before_script:
+  - 'npm install'
+  - 'bower install'
+  - 'npm install protractor'
+  - 'webdriver-manager update'

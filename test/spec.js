@@ -6,9 +6,9 @@ describe('To Do List App', function() {
       expect(browser.getTitle()).toEqual('To Do List');
     });
 
-    It ("should have an input field", function() {
-      browser.get('http://localhost:3000');
-    });
+    // It ("should have an input field", function() {
+    //   browser.get('http://localhost:3000');
+    // });
 
 
   });
