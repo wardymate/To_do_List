@@ -15,4 +15,18 @@ todoList.controller('ItemAdderController', function() {
     item.isComplete = true;
   };
 
+  self.completedTasks = function() {
+    function completed(task){
+      return task.isComplete === true;
+    }
+    return self.taskList.filter(completed).length;
+  };
+
+  self.uncompletedTasks = function() {
+    function uncompleted(task){
+      return task.isComplete === false;
+    }
+    return self.taskList.filter(uncompleted).length;
+  };
+
 });
