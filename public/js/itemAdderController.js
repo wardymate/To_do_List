@@ -7,4 +7,8 @@ todoList.controller('ItemAdderController', function() {
     self.taskList.push({'taskName' : this.newTask, 'complete': false });
   };
 
+  self.totalTasks = function() {
+    return self.taskList.length;
+  };
+
 });
