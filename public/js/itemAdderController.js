@@ -4,11 +4,15 @@ todoList.controller('ItemAdderController', function() {
   self.taskList = [];
 
   self.addTask = function() {
-    self.taskList.push({'taskName' : this.newTask, 'complete': false });
+    self.taskList.push({'taskName' : this.newTask, 'isComplete': false });
   };
 
   self.totalTasks = function() {
     return self.taskList.length;
+  };
+
+  self.completeTask = function(item) {
+    item.isComplete = true;
   };
 
 });

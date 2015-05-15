@@ -25,13 +25,13 @@ describe('ItemAdderController', function() {
     });
 
     it('marks the task as incomplete when added', function() {
-      expect(ctrl.taskList).toEqual([{'taskName': 'Go shopping', 'complete': false }]);
+      expect(ctrl.taskList).toEqual([{'taskName': 'Go shopping', 'isComplete': false }]);
     });
 
     it('can add multiple items', function() {
       ctrl.newTask = 'wash the car';
       ctrl.addTask();
-      expect(ctrl.taskList[1]).toEqual({'taskName': 'wash the car', 'complete': false });
+      expect(ctrl.taskList[1]).toEqual({'taskName': 'wash the car', 'isComplete': false });
     });
 
     it('knows how many items are in the todo list', function() {
@@ -40,6 +40,10 @@ describe('ItemAdderController', function() {
       expect(ctrl.totalTasks()).toEqual(2);
     });
 
+    it('can mark an item as complete', function() {
+      ctrl.completeTask(ctrl.taskList[0]);
+      expect(ctrl.taskList[0].isComplete).toEqual(true);
+    });
 
   });
 
