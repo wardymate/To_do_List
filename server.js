@@ -5,7 +5,7 @@ var server = require('http').createServer(app);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
-  response.send('index.html')
+  response.send('index.html');
 });
 
 server.listen(3000, function() {

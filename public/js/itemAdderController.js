@@ -1,7 +1,10 @@
-todoList.controller('ItemAdderController', function($scope) {
+todoList.controller('ItemAdderController', function() {
+  var self = this;
 
-  $scope.taskList = {
-    "tasks": [{"detail":"Go Shopping"},{"detail":"wash the car"}]
+  self.taskList = [];
+
+  self.addTask = function() {
+    self.taskList.push({'taskName' : this.newTask });
   };
 
 });

@@ -1,26 +1,25 @@
 describe('ItemAdderController', function() {
   beforeEach(module('Lister'));
 
-  var scope, ctrl;
+  var ctrl;
 
-  beforeEach(inject(function($rootScope, $controller) {
-    scope = $rootScope.$new();
-    ctrl = $controller('ItemAdderController', {
-        $scope: scope
-    });
+  beforeEach(inject(function($controller) {
+    ctrl = $controller('ItemAdderController');
   }));
 
   it('initialises with an empty todo list', function() {
-    expect(scope.taskList).toBeUndefined();
+    expect(ctrl.taskList).toEqual([]);
   });
 
   describe('when adding a new tasks', function() {
     var tasks = [{"detail":"Go Shopping"},{"detail":"wash the car"}];
 
     it('displays a newly added task', function() {
-      expect(scope.taskList.tasks).toEqual(tasks);
+      ctrl.newTask = 'Go shopping';
+      ctrl.addTask();
+      expect(ctrl.taskList).toEqual([{'taskName' : 'Go shopping'}]);
     });
-  });
 
+  });
 
 });
