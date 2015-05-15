@@ -12,12 +12,21 @@ describe('ItemAdderController', function() {
   });
 
   describe('when adding a new tasks', function() {
+
     var tasks = [{"detail":"Go Shopping"},{"detail":"wash the car"}];
 
-    it('displays a newly added task', function() {
+    beforeEach(function() {
       ctrl.newTask = 'Go shopping';
       ctrl.addTask();
-      expect(ctrl.taskList).toEqual([{'taskName' : 'Go shopping'}]);
+    });
+
+    it('adds a newly added task', function() {
+      expect(ctrl.taskList[0].taskName).toEqual('Go shopping');
+    });
+
+    it('marks the task as incomplete', function() {
+      expect(ctrl.taskList).toEqual([{'taskName': 'Go shopping', 'complete': false }])
+
     });
 
   });
