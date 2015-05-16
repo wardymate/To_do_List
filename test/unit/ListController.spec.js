@@ -1,10 +1,10 @@
-describe('ItemAdderController', function() {
+describe('ListController', function() {
   beforeEach(module('Lister'));
 
   var ctrl;
 
   beforeEach(inject(function($controller) {
-    ctrl = $controller('ItemAdderController');
+    ctrl = $controller('ListController');
   }));
 
   it('initialises with an empty todo list', function() {

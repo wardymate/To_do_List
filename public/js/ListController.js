@@ -1,10 +1,11 @@
-todoList.controller('ItemAdderController', function() {
+todoList.controller('ListController', [function() {
   var self = this;
 
   self.taskList = [];
 
   self.addTask = function() {
-    self.taskList.push({'taskName' : this.newTask, 'isComplete': false });
+    self.taskList.push({'taskName' : self.newTask, 'isComplete': false });
+    self.newTask = '';
   };
 
   self.totalTasks = function() {
@@ -42,4 +43,4 @@ todoList.controller('ItemAdderController', function() {
     self.taskList = self.taskList.filter(uncompleted);
   };
 
-});
+}]);
