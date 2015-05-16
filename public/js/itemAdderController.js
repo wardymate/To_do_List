@@ -30,7 +30,9 @@ todoList.controller('ItemAdderController', function() {
   };
 
   self.removeTask = function(task) {
-    self.taskList.pop(task);
+    if (task.isComplete){
+      self.taskList.pop(task);
+    }
   };
 
 });
