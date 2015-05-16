@@ -61,6 +61,12 @@ describe('ItemAdderController', function() {
       expect(ctrl.uncompletedTasks()).toEqual(2);
     });
 
+    it('can remove a taks when it is completed', function() {
+      ctrl.completeTask(ctrl.taskList[0]);
+      ctrl.removeTask(ctrl.taskList[0]);
+      expect(ctrl.taskList).toEqual([]);
+    });
+
 
   });
 

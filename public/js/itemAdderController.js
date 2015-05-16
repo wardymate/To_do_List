@@ -29,4 +29,8 @@ todoList.controller('ItemAdderController', function() {
     return self.taskList.filter(uncompleted).length;
   };
 
+  self.removeTask = function(task) {
+    self.taskList.pop(task);
+  };
+
 });
