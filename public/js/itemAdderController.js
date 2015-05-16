@@ -35,4 +35,11 @@ todoList.controller('ItemAdderController', function() {
     }
   };
 
+  self.removeCompletedTasks = function() {
+    function uncompleted(task){
+      return task.isComplete === false;
+    }
+    self.taskList = self.taskList.filter(uncompleted);
+  };
+
 });

@@ -72,12 +72,13 @@ describe('ItemAdderController', function() {
       expect(ctrl.taskList).toEqual([{'taskName': 'Go shopping', 'isComplete': false }]);
     });
 
-    // it('can remove all completed tasks', function() {
-    //   addSecondTask;
-    //   ctrl.completeTask(ctrl.taskList[0]);
-    //   ctrl.completeTask(ctrl.taskList[1]);
-    //   ctrl.
-    // });
+    it('can remove all completed tasks', function() {
+      addSecondTask();
+      ctrl.completeTask(ctrl.taskList[0]);
+      ctrl.completeTask(ctrl.taskList[1]);
+      ctrl.removeCompletedTasks();
+      expect(ctrl.taskList).toEqual([]);
+    });
 
 
   });
