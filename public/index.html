@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>To Do List</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -14,9 +15,9 @@
   <div class="container">
     <div class="header">
       <h2 class="page-header">To Do List
-        <span id="task-number"class="badge pull-right">Unfinished : {{ctrl.uncompletedTasks()}}
+        <span id="unfinished-number"class="badge pull-right">Unfinished : {{ctrl.uncompletedTasks()}}
         </span>
-        <span id="task-number"class="badge pull-right">Finished : {{ctrl.completedTasks()}}
+        <span id="finished-number"class="badge pull-right">Finished : {{ctrl.completedTasks()}}
         </span>
         <span id="task-number"class="badge pull-right">Total : {{ctrl.taskList.length}}
         </span>
@@ -25,7 +26,10 @@
     <ul class="list-group">
       <li ng-repeat="(key, task) in ctrl.taskList" class="list-group-item">
         <p>{{task.taskName}}
-          <input id="task-{{key}}-checkbox" ng-model="completed"type="checkbox" class="pull-right">
+          <input id="task-{{key}}-delete" ng-model="delete"type="checkbox" class="pull-right add-padding">
+          <span class="pull-right add-padding">Remove :</span>
+          <input id="task-{{key}}-completed" ng-model="completed"type="checkbox" class="pull-right add-padding" ng-click="ctrl.completeTask(task)">
+          <span class="pull-right add-padding">Finished :</span>
         </p>
       </li>
     </ul>

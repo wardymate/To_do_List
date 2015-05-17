@@ -29,11 +29,12 @@ describe('To Do List App', function() {
       expect(element(by.model('completed')).isSelected()).toBe(false);
     });
 
-   xdescribe('marking a task complete', function() {
+   describe('marking a task complete', function() {
     it('by ticking on a checkbox', function() {
       element(by.model('ctrl.newTask')).sendKeys('clean car');
       element(by.id('create-task')).click();
-
+      element(by.model('completed')).click();
+      expect(element(by.id('finished-number')).getText()).toContain("1");
     });
    });
 
