@@ -12,7 +12,12 @@
 </head>
 <body ng-controller="ListController as ctrl">
   <div class="container">
-    <h1 class="page-header">To Do List</h1>
+    <div class="header">
+      <h2 class="page-header">To Do List
+        <span id="task-number"class="badge pull-right">Total : {{ctrl.taskList.length}}
+        </span>
+      </h2>
+    </div>
     <form class="form-horizontal" ng-submit="ctrl.addTask()">
       <fieldset>
         <label>Task
