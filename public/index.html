@@ -14,10 +14,23 @@
   <div class="container">
     <div class="header">
       <h2 class="page-header">To Do List
+        <span id="task-number"class="badge pull-right">Unfinished : {{ctrl.uncompletedTasks()}}
+        </span>
+        <span id="task-number"class="badge pull-right">Finished : {{ctrl.completedTasks()}}
+        </span>
         <span id="task-number"class="badge pull-right">Total : {{ctrl.taskList.length}}
         </span>
       </h2>
     </div>
+    <ul class="list-group">
+      <li ng-repeat="(key, task) in ctrl.taskList" class="list-group-item">
+        <p>{{task.taskName}}
+          <input id="task-{{key}}-checkbox" ng-model="completed"type="checkbox" class="pull-right">
+        </p>
+      </li>
+    </ul>
+
+
     <form class="form-horizontal" ng-submit="ctrl.addTask()">
       <fieldset>
         <label>Task
@@ -27,11 +40,7 @@
       </fieldset>
     </form>
 
-    <ul class="list-group">
-      <li ng-repeat="task in ctrl.taskList">
-        <p>{{task.taskName}}</p>
-      </li>
-    </ul>
+
   </div>
 
 

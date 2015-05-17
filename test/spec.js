@@ -14,14 +14,30 @@ describe('To Do List App', function() {
     it('displays the new task', function() {
       element(by.model('ctrl.newTask')).sendKeys('clean car');
       element(by.id('create-task')).click();
-      expect(element(by.repeater('task in ctrl.taskList')).getText()).toContain('clean car');
+      expect(element(by.repeater('(key, task) in ctrl.taskList')).getText()).toContain('clean car');
     });
 
-    it('displays the number of tasks', function() {
+    it('displays the total number of tasks', function() {
       element(by.model('ctrl.newTask')).sendKeys('clean car');
       element(by.id('create-task')).click();
       expect(element(by.id('task-number')).getText()).toContain("1");
     });
+
+    it('marks the task as incomplete', function() {
+      element(by.model('ctrl.newTask')).sendKeys('clean car');
+      element(by.id('create-task')).click();
+      expect(element(by.model('completed')).isSelected()).toBe(false);
+    });
+
+   xdescribe('marking a task complete', function() {
+    it('by ticking on a checkbox', function() {
+      element(by.model('ctrl.newTask')).sendKeys('clean car');
+      element(by.id('create-task')).click();
+
+    });
+   });
+
+
 
   });
 
