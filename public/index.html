@@ -26,15 +26,13 @@
     <ul class="list-group">
       <li ng-repeat="(key, task) in ctrl.taskList" class="list-group-item">
         <p>{{task.taskName}}
-          <input id="task-{{key}}-delete" ng-model="delete"type="checkbox" class="pull-right add-padding">
+          <input id="task-{{key}}-delete" ng-model="delete" ng-click="ctrl.removeTask(task)" type="checkbox" class="pull-right add-padding">
           <span class="pull-right add-padding">Remove :</span>
           <input id="task-{{key}}-completed" ng-model="completed"type="checkbox" class="pull-right add-padding" ng-click="ctrl.completeTask(task)">
           <span class="pull-right add-padding">Finished :</span>
         </p>
       </li>
     </ul>
-
-
     <form class="form-horizontal" ng-submit="ctrl.addTask()">
       <fieldset>
         <label>Task
@@ -43,11 +41,6 @@
         <input id="create-task" type="submit" value="add task" class="btn btn-primary">
       </fieldset>
     </form>
-
-
   </div>
-
-
-
 </body>
 </html>

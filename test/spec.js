@@ -28,22 +28,23 @@ describe('To Do List App', function() {
       element(by.id('create-task')).click();
       expect(element(by.model('completed')).isSelected()).toBe(false);
     });
+  });
 
-   describe('marking a task complete', function() {
-    it('by ticking on a checkbox', function() {
+  describe('updating an task', function() {
+    it('marking a task completeby ticking on a checkbox', function() {
       element(by.model('ctrl.newTask')).sendKeys('clean car');
       element(by.id('create-task')).click();
       element(by.model('completed')).click();
       expect(element(by.id('finished-number')).getText()).toContain("1");
     });
-   });
 
-
-
+    it('removing a task', function() {
+      element(by.model('ctrl.newTask')).sendKeys('clean car');
+      element(by.id('create-task')).click();
+      element(by.model('completed')).click();
+      element(by.model('delete')).click();
+      expect(element(by.className('list-group')).getText()).toNotContain('clean car');
+    });
   });
-
-
-
-
 
 });
